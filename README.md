@@ -1,6 +1,12 @@
 About
 ======
-This is a collection of Python 3.x idioms, datastructures and effective code
+This is a collection of Python 3.x idioms, datastructures and effective code.
+
+Main topics covered so far:
+
+* data structures
+* expressions
+* internals of Python, useful hacks
 
 
 Overview
@@ -26,9 +32,9 @@ As a result a folder env with python libs will be created
 3) Activate virtual env:
 
 ```
-.\env\Scripts\activate
+./env/Scripts/activate
 ```
-The promt will be changed to (env)
+The prompt will be changed to (env)
 
 4) Install necessary dependencies into virtual environment:
 
