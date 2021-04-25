@@ -15,7 +15,7 @@ def mutable_sequences():
     arr.insert(10, 0)
     print(arr)
 
-    # comprehensions
+    # see also: comprehensions
     arr_long = [range(10)]
     print(arr_long)
 
@@ -48,16 +48,14 @@ def queues():
 
 
 def stacks():
-    stack_1 = []
-    stack_1.append(1)
-    stack_1.append(2)
+    stack_1 = [1, 2]
     print(f'stack initial state: {stack_1}')
 
     stack_1.pop()
     print(stack_1)
 
 
-def maps():
+def dictionary():
     map_1 = dict()
     map_1['orange'] = 7
     map_1['watermelon'] = 1
@@ -91,7 +89,7 @@ def main():
     sets()
     queues()
     stacks()
-    maps()
+    dictionary()
     named_tuple()
     enums()
 
