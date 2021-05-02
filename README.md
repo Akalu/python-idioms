@@ -7,6 +7,7 @@ Main topics covered so far:
 * data structures
 * expressions
 * internals of Python, useful hacks
+* testing
 
 
 Overview
