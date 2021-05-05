@@ -31,6 +31,12 @@ def main():
     print(f'id(x)={id(y)}')
     print(type(x))
 
+    print(Singleton.__class__) # top parent type is absent, so the type is 'type'
+    print(SingletonClass.__class__)
+    print(SingletonClass.__class__.__class__)
+    print(RegularClass.__class__)
+    print(type.__class__)
+
 
 if __name__ == '__main__':
     main()
