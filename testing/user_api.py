@@ -31,6 +31,7 @@ class UserController(UserSchema):
         """Return whether or not the user is valid. """
         return not self.schema.validate(user)
 
+    @staticmethod
     def write_csv(self, filename, users):
         """Write a CSV given a filename and a list of users.
 

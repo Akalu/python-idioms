@@ -8,7 +8,8 @@ def measure(func):
     def wrapper(*args, **kwargs):
         t = time()  # code to be executed before wrapped function invoking
         func(*args, **kwargs)  # invoke wrapped function
-        print(f' {func.__name__} finished in {time() - t} sec:')  # code to be executed after wrapped function invoking
+        print(
+            f'measure anno: {func.__name__} finished in {time() - t} sec:')  # code to be executed after wrapped function invoking
 
     return wrapper
 
@@ -18,7 +19,7 @@ def nullable(func):
     def wrapper(*args, **kwargs):
         result = func(*args, **kwargs)
         if result is None:
-            print('function did not return anything')
+            print('nullable anno: function did not return anything')
         return result
 
     return wrapper
@@ -30,11 +31,17 @@ def validate(param, threshold):
         @wraps(func)
         def wrapper(*args, **kwargs):
             if kwargs is not None and param in kwargs and kwargs[param] < threshold:
-                raise Exception('Exception: argument must be >= 0')
+                raise Exception('validate anno: exception: argument must be >= 0')
 
         return wrapper
 
     return decorator
+
+
+# a minimal decorator without @wraps
+def minimal(arg):
+    print(f'minimal anno: this code has been invoked before {arg}')
+    return arg
 
 
 # Step 2 - annotate wrapping functions with decorator(s)
@@ -46,6 +53,11 @@ def test(sleep_time=0.1):
     sleep(sleep_time)
 
 
+@minimal
+def test_method(arg1=0):
+    print(f'invoking test_method with arg1={arg1}')
+
+
 def main():
     test(sleep_time=0.3)
     print(f'function\'s name: {test.__name__}, description: {test.__doc__}')
@@ -54,6 +66,8 @@ def main():
         test(sleep_time=-10)
     except Exception as e:
         print(e)
+
+    test_method(arg1=2)
 
 
 if __name__ == '__main__':

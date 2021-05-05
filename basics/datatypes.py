@@ -52,7 +52,7 @@ def datatype_ranges():
 
 def tuples():
     # one line operation is executed using ephemeral temporary variables
-    # note: this is idiom, nit tuple (one can assign individual elements, in real type this is impossible)
+    # note: this is implicit tuple (one can assign individual elements, in real tuple this is impossible)
     a, b = 1, 0
     b, a = a + 1, b
     a += 3

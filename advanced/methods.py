@@ -1,5 +1,6 @@
 class StringUtil:
 
+    # static methods do not really use instance variables
     @staticmethod
     def is_palindrome(s, case_insensitive=True):
         s = ''.join(c for c in s if c.isalnum())
@@ -21,11 +22,13 @@ class Point:
         self.y = y
 
     @classmethod
-    def from_tuple(cls, coords):  # factory -  cls is a Point
-        return cls(*coords)
+    def from_tuple(cls, coords):  # native implementation of the factory -  cls ref to the Point type
+        p = cls(*coords)
+        print(type(p))
+        return p
 
     @classmethod
-    def from_point(cls, point):  # factory - cls is a Point
+    def from_point(cls, point):
         return cls(point.x, point.y)
 
 

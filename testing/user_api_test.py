@@ -4,6 +4,7 @@ from testing.user_api import UserController
 from testing.user_schema import UserSchema
 
 
+# this section defines the base structures (records, maps, etc) which will be used in tests
 @pytest.fixture
 def min_user():
     """Represent a valid user with minimal data. """
@@ -35,18 +36,23 @@ def users(min_user, full_user):
     return [min_user, bad_user, full_user]
 
 
+# base class containing all unit-tests
 class TestIsValid:
     """Test how code verifies whether a user is valid or not. """
 
+    # first instantiate all types we are going to test
     schema = UserSchema()
     controller = UserController(schema)
 
+    # unit tests themselves
+    # Note: we are heavily using parameterization
     def test_minimal(self, min_user):
         assert self.controller.is_valid(min_user)
 
     def test_full(self, full_user):
         assert self.controller.is_valid(full_user)
 
+    # define parameters to test against
     @pytest.mark.parametrize('age', range(66, 100))
     def test_invalid_age_too_old(self, age, min_user):
         min_user['age'] = age
@@ -76,6 +82,7 @@ class TestIsValid:
         min_user['name'] = ' \n\t'
         assert not self.controller.is_valid(min_user)
 
+    # define tuples (email, outcome) to test against
     @pytest.mark.parametrize(
         'email, outcome',
         [
