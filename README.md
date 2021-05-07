@@ -6,7 +6,7 @@ Main topics covered so far:
 
 * data structures
 * expressions
-* metaclasses
+* meta classes, dynamic object construction
 * internals of Python, useful hacks
 * testing
 
