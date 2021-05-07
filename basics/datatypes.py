@@ -28,7 +28,7 @@ def datatype_analysis():
     print(f'{just_math_op} isnumeric ? {just_math_op.isnumeric()}')
 
 
-def datatypes_conversions():
+def datatype_conversions():
     int_val_of_true = int(True)
     int_val_of_false = int(False)
     print(f'intValOfTrue={int_val_of_true}')
@@ -37,6 +37,10 @@ def datatypes_conversions():
     print(f'bool(3)={bool(3)}')
     print(f'bool(-3)={bool(-3)}')
     print(f'False + 1={False + 1}')
+    char_a = 'a'
+    print(f'unicode value of a is {ord(char_a)}')
+    char_a = chr(ord(char_a))
+    print(f'unicode value of 97 is {char_a}')
 
 
 def datatype_ranges():
@@ -82,7 +86,7 @@ def tuples():
 def main():
     strings_manipulation()
     datatype_analysis()
-    datatypes_conversions()
+    datatype_conversions()
     datatype_ranges()
     tuples()
 
