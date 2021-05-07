@@ -1,5 +1,8 @@
+# external method could be used as an object to be bind dynamically during object creation
+# see ClassD as an example
 def f(obj):
     print('size attribute =', obj.size)
+
 
 # __new__(): It’s a method which is called before __init__().
 # It creates the object and return it. One can override this method to control how the objects are created.

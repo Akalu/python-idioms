@@ -15,7 +15,6 @@ def traverse_2d_matrix():
     print(matrix2d[1][2])
 
 
-
 def main():
     traverse_2d_matrix()
 
