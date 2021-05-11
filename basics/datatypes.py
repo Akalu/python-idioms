@@ -3,9 +3,9 @@ import sys
 
 def strings_manipulation():
     str1 = 'part1'
-    #          \3=='t - excluded
+    #          \3==t - excluded
     str2 = 'part2'
-    #          \3=='t - included
+    #          \3==t - included
     str_res = str1[:3] + '|' + str2[3:]
     print(str_res)
 
@@ -67,6 +67,9 @@ def tuples():
     # build tuple from parts of idiom tuple expression
     tuple_4 = (a, a, b)
     print(f'(a, a, b) = {tuple_4}')
+    a = 4
+    print(f'after changing a=4: (a, a, b) = {tuple_4}')
+    print(f'(a, a, b)[0] = {tuple_4[0]}')
 
     # real tuple
     # Note: tuple is Immutable objects!

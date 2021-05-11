@@ -5,7 +5,7 @@ from time import sleep
 counter = 0  # a global variable accessible from different threads
 incr_lock = threading.Lock()
 
-random_delay = lambda: sleep(0.1 * random())
+random_delay = lambda : sleep(0.1 * random())
 
 
 def inc(n, name):

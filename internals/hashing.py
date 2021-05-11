@@ -41,6 +41,7 @@ def print_info(person_0, person_1, person_2):
 
     print(persons)
 
+
 def calc_hash():
     val_1 = 10
     val_2 = 10
@@ -67,9 +68,18 @@ def calc_hash():
 
     print_info(person_0, person_1, person_2)
 
+def data_structures_hashes():
+    all = dict()
+    tuple1 = ('a','b')
+    all[tuple1] = 1
+    print(f'tuple1 in all {tuple1 in all}')
+    tuple2 = ('a','b')
+    print(f'tuple2 in all {tuple2 in all}')
+
 
 def main():
     calc_hash()
+    data_structures_hashes()
 
 
 if __name__ == '__main__':
