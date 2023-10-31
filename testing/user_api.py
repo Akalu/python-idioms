@@ -9,6 +9,7 @@ class UserController(UserSchema):
     """
 
     def __init__(self, schema):
+        super().__init__()
         self.schema = schema
 
     def export(self, filename, users, overwrite=True):
@@ -32,7 +33,7 @@ class UserController(UserSchema):
         return not self.schema.validate(user)
 
     @staticmethod
-    def write_csv(self, filename, users):
+    def write_csv(filename, users):
         """Write a CSV given a filename and a list of users.
 
         The users are assumed to be valid for the given CSV structure.

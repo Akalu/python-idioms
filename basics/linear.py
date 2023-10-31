@@ -27,7 +27,7 @@ def sets():
     set_1.add(4)
     print(set_1)
 
-    set_2 = set([1, 2, 3])
+    set_2 = {1, 2, 3}
     print(set_2)
 
     print(f'intersection is {set_1.intersection(set_2)}')

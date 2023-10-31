@@ -11,7 +11,7 @@ class Person:
             return self.name < other.name
 
         # or, as simple as:
-        return (self.name, self.age) < (other.name, other.age)
+        # return (self.name, self.age) < (other.name, other.age)
 
     def __repr__(self):
         return f'({self.name}, {self.age})'
